@@ -1,1 +1,1 @@
-Balls busted!
+print("Balls busted!")
