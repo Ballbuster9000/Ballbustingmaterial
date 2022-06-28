@@ -1,18 +1,80 @@
-return {
-    "EFEC20D5-081F-4541-AF92-7BF32086C867",
-    "AF237CED-D935-46CB-AAD0-5979700D5560",
-    "C77427FF-AE87-41BA-8CCA-326E743F5A43",
-    "4B8EE6F0-8007-4904-82F3-259FB8B8E2EB",
-    "68B4D21D-E24D-47A5-A95D-CF53FD728FF6", -- Madcitydontlikeme6 
-    "05923BA5-909C-4EB7-8DA9-9D36F85DD6F4",
-    "A0221D23-A416-422E-A3F9-ABEDAFF6557D",
-    "252CD250-15B9-4C58-9C45-1B06064B50ED",
-    "9925CCD2-E531-47A8-AE12-02260D9CCB25",
-    "8CDD54ED-5F5A-4138-B64B-770313174802",
-    "166E11EB-8748-4719-8B05-E2D6F3CE658D",
-    "2701A4AE-F9AB-4059-92E1-C6B3FC9F4036",
-    "79E94DF8-DA2B-44FA-BDE4-AF7887775E35",
-    "716C9015-E2E7-4617-8434-6C9BAE033465",
-    "FAD906F8-2CDB-43B3-9369-55F2DCB60265",
-    "F7E0F349-0DAC-493A-BE18-BA99EC542336"
-}
+local LocalPlayer = game:GetService("Players").LocalPlayer
+local Character = LocalPlayer.Character
+local Humanoid = Character:FindFirstChildOfClass("Humanoid")
+
+function rm()
+	for i,v in pairs(Character:GetDescendants()) do
+		if v:IsA("BasePart") then
+			if v.Name == "Handle" or v.Name == "Head" then
+				if Character.Head:FindFirstChild("OriginalSize") then
+					Character.Head.OriginalSize:Destroy()
+				end
+			else
+				for i,cav in pairs(v:GetDescendants()) do
+					if cav:IsA("Attachment") then
+						if cav:FindFirstChild("OriginalPosition") then
+							cav.OriginalPosition:Destroy()  
+						end
+					end
+				end
+				pcall(function()
+				v:FindFirstChild("OriginalSize"):Destroy()
+				end)
+				if v:FindFirstChild("AvatarPartScaleType") then
+					v:FindFirstChild("AvatarPartScaleType"):Destroy()
+				end
+			end
+		end
+	end
+end
+
+rm()
+wait(0.5)
+Humanoid:FindFirstChild("BodyProportionScale"):Destroy()
+wait(1)
+
+rm()
+wait(0.5)
+Humanoid:FindFirstChild("BodyHeightScale"):Destroy()
+wait(1)
+
+rm()
+wait(0.5)
+Humanoid:FindFirstChild("BodyWidthScale"):Destroy()
+wait(1)
+
+rm()
+wait(0.5)
+Humanoid:FindFirstChild("BodyDepthScale"):Destroy()
+wait(1)
+
+rm()
+wait(0.5)
+Humanoid:FindFirstChild("HeadScale"):Destroy()
+wait(1)
+
+
+rm()
+wait(0.5)
+Humanoid:FindFirstChild("BodyProportionScale"):Destroy()
+wait(1)
+
+rm()
+wait(0.5)
+Humanoid:FindFirstChild("BodyHeightScale"):Destroy()
+wait(1)
+
+rm()
+wait(0.5)
+Humanoid:FindFirstChild("BodyWidthScale"):Destroy()
+wait(1)
+
+rm()
+wait(0.5)
+Humanoid:FindFirstChild("BodyDepthScale"):Destroy()
+wait(1)
+
+rm()
+wait(0.5)
+Humanoid:FindFirstChild("HeadScale"):Destroy()
+wait(1)
